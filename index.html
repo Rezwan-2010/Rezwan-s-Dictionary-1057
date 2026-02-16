@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Rezan's Dictionary</title>
+</head>
+<body>
+  <main id="app">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search for a word..." inputmode="search" />
+      <button id="clear-search" title="Clear">✕</button>
+    </div>
+
+    <div class="actions">
+      <button id="export-btn">Export Dictionary</button>
+      <button id="import-btn">Import Dictionary</button>
+      <input type="file" id="import-file" accept=".json" style="display: none;" />
+      <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="Food">Food</option>
+        <option value="Science">Science</option>
+        <option value="Nature">Nature</option>
+        <option value="Daily Use">Daily Use</option>
+      </select>
+    </div>
+
+    <div class="form">
+      <input id="word" placeholder="Word" autocomplete="off" />
+      <input id="definition" placeholder="Definition" />
+      <button id="add">Add / Update</button>
+    </div>
+
+    <ul id="list" aria-live="polite"></ul>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from './app.js';
+    document.addEventListener('DOMContentLoaded', initializeApp);
+  </script>
+</body>
+</html>
